@@ -10,7 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+           Text("Map")
+                .tabItem {
+                    Image("bus-stop-icon")
+                        .resizable()
+                        .clipped()
+                    Text("Map")
+                }
+            Text("Saved stops")
+                .tabItem {
+                    Image("bookmark-icon")
+                    Text("Saved stops")
+                 }
+           Text("Bus lines timetables and routes")
+                .tabItem {
+                    Image("bus-icon")
+                    Text("Bus lines")
+                }
+            Text("More information")
+                .tabItem {
+                    Image(systemName: "info")
+                    Text("Info")
+                }
+        }.accentColor(Color("bus-green"))
     }
 }
 
