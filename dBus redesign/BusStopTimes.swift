@@ -12,17 +12,24 @@ struct BusStopTimes: View {
     @Binding var busStop: BusStopPoint
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Image("bus-stop-icon")
                     .resizable()
                     .frame(width: 40, height: 40, alignment: Alignment.center)
                 VStack(alignment: .leading) {
                     Text(busStop.title!)
-                    Text("Parada \(busStop.id)").font(.subheadline)
+                    Text("Stop n.\(busStop.id)").font(.subheadline)
                 }
                 .padding(.leading)
                 Spacer()
+                Image(systemName: "gobackward")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 25, height: 25, alignment: Alignment.center)
+            }
+            Button(action: {}) {
+                Text("Read out loud")
             }
             Divider()
             ForEach(busStop.buses, id: \.self) { bus in

@@ -52,9 +52,7 @@ struct MapView: UIViewRepresentable {
             }
             
             if annotation is BusStopPoint {
-                print(parent.colorScheme)
                 annotationView?.image = UIImage(named: "bus-stop-pin")
-                
             }
 
             return annotationView
