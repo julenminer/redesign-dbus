@@ -36,14 +36,12 @@ struct MapView: UIViewRepresentable {
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
-        @Environment(\.colorScheme) var colorScheme
         
         init(_ parent: MapView) {
             self.parent = parent
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            print("pasa")
             let identifier = "Stop"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             if annotationView == nil {
@@ -54,11 +52,9 @@ struct MapView: UIViewRepresentable {
             }
             
             if annotation is BusStopPoint {
-                if colorScheme == .dark {
-                    annotationView?.image = UIImage(named: "bus-stop-pin")?.withTintColor(UIColor.green)
-                } else {
-                    annotationView?.image = UIImage(named: "bus-stop-pin")?.withTintColor(UIColor(named: "bus-blue")!)
-                }
+                print(parent.colorScheme)
+                annotationView?.image = UIImage(named: "bus-stop-pin")
+                
             }
 
             return annotationView
