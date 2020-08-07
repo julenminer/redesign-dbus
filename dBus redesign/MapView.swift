@@ -6,7 +6,8 @@ struct MapView: UIViewRepresentable {
     @Binding var busStopPoints: [BusStopPoint]
     @Binding var centerCoordinate: CLLocationCoordinate2D
     @Binding var cardPosition: CardPosition
-    
+    @Binding var selectedPoint: BusStopPoint
+        
     var locationManager = CLLocationManager()
     func setupManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -25,6 +26,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.removeAnnotations(busStopPoints)
         uiView.addAnnotations(busStopPoints)
     }
     
@@ -34,24 +36,29 @@ struct MapView: UIViewRepresentable {
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
+        @Environment(\.colorScheme) var colorScheme
         
         init(_ parent: MapView) {
             self.parent = parent
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            print("pasa")
             let identifier = "Stop"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             if annotationView == nil {
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView?.canShowCallout = true
-                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             } else {
                 annotationView?.annotation = annotation
             }
             
             if annotation is BusStopPoint {
-                annotationView?.image = UIImage(named: "bus-stop-pin-alt")
+                if colorScheme == .dark {
+                    annotationView?.image = UIImage(named: "bus-stop-pin")?.withTintColor(UIColor.green)
+                } else {
+                    annotationView?.image = UIImage(named: "bus-stop-pin")?.withTintColor(UIColor(named: "bus-blue")!)
+                }
             }
 
             return annotationView
@@ -60,6 +67,7 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             if let selectedAnnotation = view.annotation as? BusStopPoint {
                 print(selectedAnnotation.title!)
+                parent.selectedPoint = selectedAnnotation
                 parent.cardPosition = .middle
             }
         }

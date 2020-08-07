@@ -3,6 +3,7 @@ import SwiftUI
 struct SlideOverCard<Content: View> : View {
     @GestureState private var dragState = DragState.inactive
     @Binding var position: CardPosition
+    @Environment(\.colorScheme) var colorScheme
     
     var content: () -> Content
     var body: some View {
@@ -16,17 +17,17 @@ struct SlideOverCard<Content: View> : View {
             Handle()
             self.content()
         }
-        .background(Color.white)
+        .background(colorScheme == .light ? Color.white : Color.black)
         .cornerRadius(10.0)
         .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.13), radius: 10.0)
-        .offset(y: self.position.rawValue + self.dragState.translation.height)
+        .offset(y: position.rawValue + self.dragState.translation.height)
         .animation(self.dragState.isDragging ? nil : .interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
         .gesture(drag)
     }
     
     private func onDragEnded(drag: DragGesture.Value) {
         let verticalDirection = drag.predictedEndLocation.y - drag.location.y
-        let cardTopEdgeLocation = self.position.rawValue + drag.translation.height
+        let cardTopEdgeLocation = position.rawValue + drag.translation.height
         let positionAbove: CardPosition
         let positionBelow: CardPosition
         let closestPosition: CardPosition
@@ -46,11 +47,11 @@ struct SlideOverCard<Content: View> : View {
         }
         
         if verticalDirection > 0 {
-            self.position = positionBelow
+            position = positionBelow
         } else if verticalDirection < 0 {
-            self.position = positionAbove
+            position = positionAbove
         } else {
-            self.position = closestPosition
+            position = closestPosition
         }
     }
 }

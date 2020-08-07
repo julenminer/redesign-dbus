@@ -13,10 +13,11 @@ struct TabMapView: View {
     @State var busStopPoints: [BusStopPoint] = busStops
     @State var centerCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(43.322302), longitude: CLLocationDegrees(-1.983218))
     @State var cardPosition = CardPosition.bottom
+    @State var selectedPoint: BusStopPoint = BusStopPoint(title: "", coordinate: .init(latitude: 0, longitude: 0), id: -1, buses: [])
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            MapView(busStopPoints: $busStopPoints, centerCoordinate: $centerCoordinate, cardPosition: $cardPosition)
+            MapView(busStopPoints: $busStopPoints, centerCoordinate: $centerCoordinate, cardPosition: $cardPosition, selectedPoint: $selectedPoint)
                 .edgesIgnoringSafeArea(.top)
             VStack {
                 Button(action: {}) {
@@ -31,9 +32,7 @@ struct TabMapView: View {
             .padding(.trailing)
             SlideOverCard(position: $cardPosition) {
                 VStack {
-                    Image(systemName: "info")
-                    Text("Maitland Bay")
-                        .font(.headline)
+                    BusStopTimes(busStop: self.$selectedPoint)
                     Spacer()
                 }.frame(width: UIScreen.main.bounds.width)
             }
