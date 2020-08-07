@@ -13,6 +13,10 @@
 		211E9CAA24DC64F1005FC228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211E9CA924DC64F1005FC228 /* Assets.xcassets */; };
 		211E9CAD24DC64F1005FC228 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211E9CAC24DC64F1005FC228 /* Preview Assets.xcassets */; };
 		211E9CB024DC64F1005FC228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211E9CAE24DC64F1005FC228 /* LaunchScreen.storyboard */; };
+		211E9CB824DC7AA7005FC228 /* TabMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E9CB724DC7AA7005FC228 /* TabMapView.swift */; };
+		211E9CBA24DC7C51005FC228 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211E9CB924DC7C51005FC228 /* MapView.swift */; };
+		215C463724DD6D28005352F2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C463624DD6D28005352F2 /* Helper.swift */; };
+		215C463924DD84CC005352F2 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C463824DD84CC005352F2 /* SlideOverCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		211E9CAC24DC64F1005FC228 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		211E9CAF24DC64F1005FC228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211E9CB124DC64F1005FC228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211E9CB724DC7AA7005FC228 /* TabMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMapView.swift; sourceTree = "<group>"; };
+		211E9CB924DC7C51005FC228 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		215C463624DD6D28005352F2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		215C463824DD84CC005352F2 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				211E9CA324DC64F0005FC228 /* AppDelegate.swift */,
 				211E9CA524DC64F0005FC228 /* SceneDelegate.swift */,
 				211E9CA724DC64F0005FC228 /* ContentView.swift */,
+				215C463624DD6D28005352F2 /* Helper.swift */,
+				211E9CB724DC7AA7005FC228 /* TabMapView.swift */,
+				211E9CB924DC7C51005FC228 /* MapView.swift */,
+				215C463824DD84CC005352F2 /* SlideOverCard.swift */,
 				211E9CA924DC64F1005FC228 /* Assets.xcassets */,
 				211E9CAE24DC64F1005FC228 /* LaunchScreen.storyboard */,
 				211E9CB124DC64F1005FC228 /* Info.plist */,
@@ -147,8 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				211E9CA424DC64F0005FC228 /* AppDelegate.swift in Sources */,
+				211E9CB824DC7AA7005FC228 /* TabMapView.swift in Sources */,
+				215C463924DD84CC005352F2 /* SlideOverCard.swift in Sources */,
+				211E9CBA24DC7C51005FC228 /* MapView.swift in Sources */,
 				211E9CA624DC64F0005FC228 /* SceneDelegate.swift in Sources */,
 				211E9CA824DC64F0005FC228 /* ContentView.swift in Sources */,
+				215C463724DD6D28005352F2 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

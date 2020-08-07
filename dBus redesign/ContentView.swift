@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-           Text("Map")
+           TabMapView()
                 .tabItem {
                     Image("bus-stop-icon")
                         .resizable()
@@ -34,6 +34,7 @@ struct ContentView: View {
                     Text("Info")
                 }
         }.accentColor(Color("bus-green"))
+            .navigationBarHidden(true)        
     }
 }
 
