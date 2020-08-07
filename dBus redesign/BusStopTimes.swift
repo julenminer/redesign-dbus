@@ -27,6 +27,10 @@ struct BusStopTimes: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25, height: 25, alignment: Alignment.center)
+                Image("add-bookmark-icon")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25, alignment: Alignment.center)
             }
             Button(action: {}) {
                 Text("Read out loud")
