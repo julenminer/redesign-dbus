@@ -45,17 +45,3 @@ struct TabMapView_Previews: PreviewProvider {
         TabMapView()
     }
 }
-
-final class BusStopPoint: NSObject, MKAnnotation {
-    let title: String?
-    let coordinate: CLLocationCoordinate2D
-    let id: Int
-    let buses: [Int]
-  
-    init(title: String?, coordinate: CLLocationCoordinate2D, id: Int, buses: [Int]) {
-        self.title = title
-        self.coordinate = coordinate
-        self.id = id
-        self.buses = buses
-    }
-}

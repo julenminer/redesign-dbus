@@ -1,6 +1,22 @@
 import Foundation
 import SwiftUI
-let busStops = [
+import MapKit
+
+final class BusStopPoint: NSObject, MKAnnotation, Identifiable {
+    let title: String?
+    let coordinate: CLLocationCoordinate2D
+    let id: Int
+    let buses: [Int]
+  
+    init(title: String?, coordinate: CLLocationCoordinate2D, id: Int, buses: [Int]) {
+        self.title = title
+        self.coordinate = coordinate
+        self.id = id
+        self.buses = buses
+    }
+}
+
+let busStops: [BusStopPoint] = [
     BusStopPoint(title: "Boulevard 3", coordinate: .init(latitude: 43.3226493, longitude: -1.9825367), id: 102, buses: [13]),
     BusStopPoint(title: "Boulevard 9", coordinate: .init(latitude: 43.3224735, longitude: -1.9830205), id: 1, buses: [21, 28]),
     BusStopPoint(title: "Boulevard 13", coordinate: .init(latitude: 43.3223149, longitude: -1.9834178), id: 79, buses: [26]),
@@ -54,3 +70,4 @@ func getLineName(number: Int) -> String {
         return "No name"
     }
 }
+

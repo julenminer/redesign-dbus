@@ -18,7 +18,7 @@ struct ContentView: View {
                         .clipped()
                     Text("Map")
                 }
-            Text("Saved stops")
+            SavedStopsView()
                 .tabItem {
                     Image("bookmark-icon")
                     Text("Saved stops")
@@ -34,7 +34,7 @@ struct ContentView: View {
                     Text("Info")
                 }
         }.accentColor(Color("bus-green"))
-            .navigationBarHidden(true)        
+            .navigationBarHidden(true)
     }
 }
 
