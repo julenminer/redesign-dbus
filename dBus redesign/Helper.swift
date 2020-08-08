@@ -25,6 +25,17 @@ let busStops: [BusStopPoint] = [
     BusStopPoint(title: "Boulevard 19", coordinate: .init(latitude: 43.3220424, longitude: -1.9841623), id: 238, buses: [8, 42])
 ]
 
+func getLines() -> [Int] {
+    var linesSet = Set<Int>()
+    for busStop in busStops {
+        for line in busStop.buses {
+            linesSet.insert(line)
+        }
+    }
+    var linesArray = Array(linesSet)
+    return linesArray.sorted()
+}
+
 func getLineColor(number: Int) -> Color {
     switch number {
     case 5, 16, 18, 25, 45:

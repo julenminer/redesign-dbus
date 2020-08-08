@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image("bookmark-icon")
                     Text("Saved stops")
                  }
-           Text("Bus lines timetables and routes")
+           BusLinesView()
                 .tabItem {
                     Image("bus-icon")
                     Text("Bus lines")

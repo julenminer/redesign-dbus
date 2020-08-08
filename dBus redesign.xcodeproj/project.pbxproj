@@ -19,6 +19,7 @@
 		215C463924DD84CC005352F2 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C463824DD84CC005352F2 /* SlideOverCard.swift */; };
 		215C463B24DD920D005352F2 /* BusStopTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C463A24DD920D005352F2 /* BusStopTimes.swift */; };
 		215C463D24DDC100005352F2 /* SavedStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C463C24DDC100005352F2 /* SavedStopsView.swift */; };
+		21C597C324DF16EF0003FE11 /* BusLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C597C224DF16EF0003FE11 /* BusLinesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		215C463824DD84CC005352F2 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
 		215C463A24DD920D005352F2 /* BusStopTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTimes.swift; sourceTree = "<group>"; };
 		215C463C24DDC100005352F2 /* SavedStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStopsView.swift; sourceTree = "<group>"; };
+		21C597C224DF16EF0003FE11 /* BusLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLinesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				211E9CB924DC7C51005FC228 /* MapView.swift */,
 				215C463824DD84CC005352F2 /* SlideOverCard.swift */,
 				215C463C24DDC100005352F2 /* SavedStopsView.swift */,
+				21C597C224DF16EF0003FE11 /* BusLinesView.swift */,
 				211E9CA924DC64F1005FC228 /* Assets.xcassets */,
 				211E9CAE24DC64F1005FC228 /* LaunchScreen.storyboard */,
 				211E9CB124DC64F1005FC228 /* Info.plist */,
@@ -171,6 +174,7 @@
 				211E9CBA24DC7C51005FC228 /* MapView.swift in Sources */,
 				211E9CA624DC64F0005FC228 /* SceneDelegate.swift in Sources */,
 				211E9CA824DC64F0005FC228 /* ContentView.swift in Sources */,
+				21C597C324DF16EF0003FE11 /* BusLinesView.swift in Sources */,
 				215C463724DD6D28005352F2 /* Helper.swift in Sources */,
 				215C463B24DD920D005352F2 /* BusStopTimes.swift in Sources */,
 			);
