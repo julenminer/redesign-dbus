@@ -28,7 +28,7 @@ struct ContentView: View {
                     Image("bus-icon")
                     Text("Bus lines")
                 }
-            InfoView()
+            Info2View()
                 .tabItem {
                     Image(systemName: "info")
                     Text("Info")

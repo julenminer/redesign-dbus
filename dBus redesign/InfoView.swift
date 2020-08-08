@@ -26,7 +26,7 @@ struct InfoView: View {
                             VStack(alignment: .leading){
                                 Text("Set alarms")
                                     .font(.system(size: 22))
-                                Text("Get a notification before the bus arrives to your stop.")
+                                Text("Receive a notification before the bus arrives to your stop.")
                                     .font(.subheadline)
                             }
                         }
