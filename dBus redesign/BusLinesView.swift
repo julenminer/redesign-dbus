@@ -15,18 +15,20 @@ struct BusLinesView: View {
         NavigationView {
             List {
                 ForEach(lines, id: \.self) { line in
-                    HStack {
-                        Text("\(line)")
-                            .font(.system(size: 20, weight: Font.Weight.bold, design: Font.Design.rounded))
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.white)
-                            .padding(6)
-                            .background(getLineColor(number: line))
-                            .cornerRadius(40)
-                        Text(getLineName(number: line))
-                        Spacer()
+                    NavigationLink(destination: EmptyView())  {
+                        HStack {
+                            Text("\(line)")
+                                .font(.system(size: 20, weight: Font.Weight.bold, design: Font.Design.rounded))
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.white)
+                                .padding(6)
+                                .background(getLineColor(number: line))
+                                .cornerRadius(40)
+                            Text(getLineName(number: line))
+                            Spacer()
+                        }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
                 }
             }
         .navigationBarTitle("Bus lines")

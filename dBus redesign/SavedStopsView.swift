@@ -13,28 +13,30 @@ struct SavedStopsView: View {
         NavigationView {
             List {
                 ForEach(busStops) { busStop in
-                    HStack {
-                        Image("bus-stop-icon")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .padding(.trailing, 8)
-                        VStack(alignment: .leading) {
-                            Text("\(busStop.id) · " + busStop.title!)
-                                .font(.headline)
-                            HStack {
-                                ForEach(busStop.buses, id: \.self) { bus in
-                                    Text("\(bus)")
-                                        .font(.subheadline)
-                                        .frame(width: 20, height: 20, alignment: .center)
-                                        .foregroundColor(Color.white)
-                                        .padding(4)
-                                        .background(getLineColor(number: bus))
-                                        .cornerRadius(40)
+                    NavigationLink(destination: EmptyView()) {
+                        HStack {
+                            Image("bus-stop-icon")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .padding(.trailing, 8)
+                            VStack(alignment: .leading) {
+                                Text("\(busStop.id) · " + busStop.title!)
+                                    .font(.headline)
+                                HStack {
+                                    ForEach(busStop.buses, id: \.self) { bus in
+                                        Text("\(bus)")
+                                            .font(.subheadline)
+                                            .frame(width: 20, height: 20, alignment: .center)
+                                            .foregroundColor(Color.white)
+                                            .padding(4)
+                                            .background(getLineColor(number: bus))
+                                            .cornerRadius(40)
+                                    }
                                 }
                             }
                         }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
                 }
             }
         .navigationBarTitle("Saved stops")
